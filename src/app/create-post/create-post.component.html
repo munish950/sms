@@ -1,0 +1,14 @@
+<h3>{{mode}}</h3>
+<form [formGroup]="postForm" (ngSubmit)="postSubmit()">
+    <ul>
+        <li class="list-item">
+            <b>Title</b> <input type="text" formControlName="title">
+        </li>
+        <li class="list-item">
+            <b>Description</b> <textarea formControlName="body"></textarea>
+        </li>
+        <li class="list-item">
+            <button type="submit">Submit</button>
+        </li>
+    </ul>
+</form>
