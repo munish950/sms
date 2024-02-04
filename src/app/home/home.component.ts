@@ -33,8 +33,4 @@ export class HomeComponent {
   viewPostComments(postId: number) {
     this.router.navigate(['post', postId]);
   }
-
-  redirectToNewPost() {
-    this.router.navigate(['create-post']);
-  }
 }

@@ -1,7 +1,10 @@
-<h3>Posts</h3>
-<ul *ngFor="let post of posts">
-    <li>{{post.id}}</li>
-    <li>{{post.title}}</li>
-    <li><button type="button" (click)="viewComments.emit(post.id)">View Comments</button></li>
-    <li><button type="button" (click)="editPost(post.id)">Edit</button></li>
-</ul>
+<p-orderList [value]="posts" [metaKeySelection]="true" header="Posts">
+    <ng-template let-post pTemplate="post">
+            <span>{{post.body}}</span>
+            <div class="action-btns">
+                <p-button (click)="viewComments.emit(post.id)" size="small" label="Comments"></p-button>
+                <p-button (click)="editPost(post.id)" size="small" label="Edit"></p-button>
+                <p-button (click)="editPost(post.id)" pButtonLG size="small" styleClass="p-button-danger" label="Delete"></p-button>
+            </div>
+    </ng-template>
+</p-orderList>

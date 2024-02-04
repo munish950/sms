@@ -1,14 +1,12 @@
-<h3>{{mode}}</h3>
-<form [formGroup]="postForm" (ngSubmit)="postSubmit()">
-    <ul>
-        <li class="list-item">
-            <b>Title</b> <input type="text" formControlName="title">
-        </li>
-        <li class="list-item">
-            <b>Description</b> <textarea formControlName="body"></textarea>
-        </li>
-        <li class="list-item">
-            <button type="submit">Submit</button>
-        </li>
-    </ul>
-</form>
+<p-card [header]="mode">
+    <form [formGroup]="postForm" (ngSubmit)="postSubmit()">
+        <label for="title">Title</label>
+        <input type="text" id="title" pInputText formControlName="title">
+        <label for="description">Description</label>
+        <textarea pInputTextarea id="description" formControlName="body"></textarea>
+        <ng-template pTemplate="footer">
+            <p-button type="submit" label="Save" icon="pi pi-check"></p-button>
+            <p-button label="Cancel" icon="pi pi-times"></p-button>
+        </ng-template>
+    </form>
+</p-card>

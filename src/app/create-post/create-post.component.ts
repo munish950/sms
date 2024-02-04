@@ -5,11 +5,22 @@ import { CommonModule } from '@angular/common';
 import {  map } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PostService } from '../services/post.service';
+import { CardModule } from 'primeng/card';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-create-post',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    CardModule,
+    InputTextModule,
+    InputTextareaModule,
+    ButtonModule,
+  ],
   templateUrl: './create-post.component.html',
   styleUrl: './create-post.component.scss',
 })
