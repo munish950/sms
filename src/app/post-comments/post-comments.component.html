@@ -1,12 +1,6 @@
-<h3>Comments</h3>
-<ul *ngFor="let comment of comments">
-    <li>
-        <b>Name</b> {{comment.name}}
-    </li>
-    <li>
-        <b>Body</b> {{comment.body}}
-    </li>
-    <li>
-        <b>Email</b> {{comment.email}}
-    </li>
-</ul>
+<p-accordion [multiple]="true">
+    <p-accordionTab *ngFor="let comment of comments" header="{{comment.name}}">
+        <p>{{comment.body}}</p>
+        <div class="footnote">{{comment.email}}</div>
+    </p-accordionTab>
+</p-accordion>

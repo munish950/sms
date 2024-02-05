@@ -5,7 +5,6 @@ import { CommonModule } from '@angular/common';
 import {  map } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PostService } from '../services/post.service';
-import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { ButtonModule } from 'primeng/button';
@@ -16,7 +15,6 @@ import { ButtonModule } from 'primeng/button';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    CardModule,
     InputTextModule,
     InputTextareaModule,
     ButtonModule,
@@ -79,6 +77,10 @@ export class CreatePostComponent {
         this.createPost(formValue);
       }
     }
+  }
+
+  toListPost() {
+    this.router.navigateByUrl('/');
   }
 }
 

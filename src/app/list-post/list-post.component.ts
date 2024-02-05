@@ -20,14 +20,7 @@ export class ListPostComponent {
   @Output()
   viewComments = new EventEmitter<number>();
 
-  ngOnChanges() {
-    console.log('posts', this.posts);
-  }
-
   editPost(id: number) {
     this.postId.emit(id);
   }
-
-  
-
 }

@@ -1,5 +1,18 @@
-ul {
-    .list-item {
-        list-style: none;
+.container {
+    min-width: 400px;
+    max-width: 600px;
+    .form-field {
+        display: flex;
+        margin-top: 16px;
+        label {
+            min-width: 100px;
+        }
+        input, textarea {
+            flex-grow: 1;
+        }
+    }
+    .action-btns {
+        gap: 8px;
+        justify-content: flex-end;
     }
 }

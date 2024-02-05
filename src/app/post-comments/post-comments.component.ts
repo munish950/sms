@@ -3,11 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { PostService } from '../services/post.service';
 import { Comment } from '../data/post';
 import { CommonModule } from '@angular/common';
+import { AccordionModule } from 'primeng/accordion';
 
 @Component({
   selector: 'app-post-comments',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AccordionModule],
   templateUrl: './post-comments.component.html',
   styleUrl: './post-comments.component.scss'
 })

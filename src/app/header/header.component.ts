@@ -20,6 +20,4 @@ export class HeaderComponent {
       {label: 'Create Post', icon: 'pi pi-fw pi-plus', routerLink: 'create-post'},
     ]
   }
-
-
 }
