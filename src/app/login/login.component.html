@@ -1,0 +1,13 @@
+<p-dialog header="Login" [modal]="true" [(visible)]="isVisible" [breakpoints]="{ '960px': '75vw' }" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false" (onHide)="displayDialog.emit(false)">
+    <div class="login-container">
+        <form class="login-form" [formGroup]="loginForm" (ngSubmit)="login()">
+            <label for="email">Email</label>
+            <input pInputText id="email" aria-describedby="email" formControlName="email"/>
+            
+            <label for="password">Password</label>
+            <input pInputText id="password" type="password" aria-describedby="password" formControlName="password"/>
+
+            <p-button type="submit" label="Submit"></p-button>
+        </form>
+    </div>
+</p-dialog>

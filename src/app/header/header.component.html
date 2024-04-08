@@ -1,3 +1,4 @@
 <div class="header-menu">
     <p-tabMenu [model]="menuItems"></p-tabMenu>
 </div>
+<app-login [isVisible]="isVisible" (displayDialog)="isVisible=$event"></app-login>
