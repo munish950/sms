@@ -57,7 +57,6 @@ export class LoginComponent {
           return EMPTY;
         }))
         .subscribe((userDetail: User[]) => {
-            console.log('userDetail', userDetail);
             this.displayDialog.emit(false);
             this.toastService.displayMessage('Login Successfully!');
         });

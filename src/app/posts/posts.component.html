@@ -1,0 +1,7 @@
+<div class="container">
+    <div class="post-list">
+        <ng-container *ngIf="posts$ | async as posts">
+            <app-list-post [posts]="posts" (postId)="editPost($event)" (viewComments)="viewPostComments($event)"></app-list-post>
+        </ng-container>
+    </div>
+</div>
