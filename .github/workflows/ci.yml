@@ -24,8 +24,12 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Run tests
-      run: npm test
+    - name: Install Chrome dependencies
+      run: sudo apt-get install -y libnss3 xvfb
+    
+    - name: Run tests in headless mode
+      run: xvfb-run --auto-servernum npm test
+    
 
     - name: Build project
       run: npm run build
