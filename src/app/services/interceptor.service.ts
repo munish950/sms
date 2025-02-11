@@ -1,12 +1,15 @@
-import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from "@angular/common/http";
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
 })
-export class InterceptorService implements HttpInterceptor {
-    intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+export class InterceptorService implements HttpInterceptor { 
+    
+    intercept(request: HttpRequest<any>,
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        next: HttpHandler): Observable<HttpEvent<any>> {
         return next.handle(request);
     }
 }

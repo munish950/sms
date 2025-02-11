@@ -1,18 +1,18 @@
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { Observable, map } from 'rxjs';
-import { Post, PostParamater } from '../data/post';
-import { PostService } from '../services/post.service';
-import { ListPostComponent } from '../list-post/list-post.component';
-import { Router } from '@angular/router';
+import { CommonModule } from "@angular/common";
+import { Component } from "@angular/core";
+import { Observable, map } from "rxjs";
+import { Post, PostParamater } from "../data/post";
+import { PostService } from "../services/post.service";
+import { ListPostComponent } from "../list-post/list-post.component";
+import { Router } from "@angular/router";
 
 
 @Component({
-  selector: 'app-posts',
+  selector: "app-posts",
   standalone: true,
   imports: [CommonModule, ListPostComponent],
-  templateUrl: './posts.component.html',
-  styleUrl: './posts.component.scss'
+  templateUrl: "./posts.component.html",
+  styleUrl: "./posts.component.scss"
 })
 export class PostsComponent {
   posts$: Observable<PostParamater[]>;

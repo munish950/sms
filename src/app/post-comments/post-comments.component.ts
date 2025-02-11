@@ -1,16 +1,16 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { PostService } from '../services/post.service';
-import { Comment } from '../data/post';
-import { CommonModule } from '@angular/common';
-import { AccordionModule } from 'primeng/accordion';
+import { Component } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
+import { PostService } from "../services/post.service";
+import { Comment } from "../data/post";
+import { CommonModule } from "@angular/common";
+import { AccordionModule } from "primeng/accordion";
 
 @Component({
-  selector: 'app-post-comments',
+  selector: "app-post-comments",
   standalone: true,
   imports: [CommonModule, AccordionModule],
-  templateUrl: './post-comments.component.html',
-  styleUrl: './post-comments.component.scss'
+  templateUrl: "./post-comments.component.html",
+  styleUrl: "./post-comments.component.scss"
 })
 export class PostCommentsComponent {
   postId: number|undefined;

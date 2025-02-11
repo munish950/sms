@@ -1,16 +1,16 @@
-import { Component} from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { CreatePostParameter, Post, PostParamater } from '../data/post';
-import { CommonModule } from '@angular/common';
-import {  map } from 'rxjs';
-import { ActivatedRoute, Router } from '@angular/router';
-import { PostService } from '../services/post.service';
-import { InputTextModule } from 'primeng/inputtext';
-import { InputTextareaModule } from 'primeng/inputtextarea';
-import { ButtonModule } from 'primeng/button';
+import { Component} from "@angular/core";
+import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
+import { CreatePostParameter, Post } from "../data/post";
+import { CommonModule } from "@angular/common";
+import { map } from "rxjs";
+import { ActivatedRoute, Router } from "@angular/router";
+import { PostService } from "../services/post.service";
+import { InputTextModule } from "primeng/inputtext";
+import { InputTextareaModule } from "primeng/inputtextarea";
+import { ButtonModule } from "primeng/button";
 
 @Component({
-  selector: 'app-create-post',
+  selector: "app-create-post",
   standalone: true,
   imports: [
     CommonModule,
@@ -19,17 +19,17 @@ import { ButtonModule } from 'primeng/button';
     InputTextareaModule,
     ButtonModule,
   ],
-  templateUrl: './create-post.component.html',
-  styleUrl: './create-post.component.scss',
+  templateUrl: "./create-post.component.html",
+  styleUrl: "./create-post.component.scss",
 })
 export class CreatePostComponent {
   postId: number | undefined;
   postDetails: Post | null = null;
-  mode: string = 'Create';
+  mode: string = "Create";
 
   postForm = this.fb.nonNullable.group({
-    title: ['', Validators.required],
-    body: [''],
+    title: ["", Validators.required],
+    body: [""],
   });
 
   constructor(
@@ -48,20 +48,20 @@ export class CreatePostComponent {
         .subscribe(postDetail => {
           this.postDetails = postDetail;
           this.postForm.setValue({ title: postDetail.title, body: postDetail.body });
-          this.mode = 'Edit';
+          this.mode = "Edit";
         });
     }
   }
 
   updatePost(postInfo: Post) {
-    this.postService.updatePost(String(postInfo.id), postInfo.toApi()).subscribe(data => {
-      this.router.navigateByUrl('/');
+    this.postService.updatePost(String(postInfo.id), postInfo.toApi()).subscribe(() => {
+      this.router.navigateByUrl("/");
     });
   }
 
   createPost(values: CreatePostParameter) {
-    this.postService.createPost(values).subscribe(res=>{
-      this.router.navigateByUrl('/');
+    this.postService.createPost(values).subscribe(()=>{
+      this.router.navigateByUrl("/");
     });
   }
 
@@ -80,7 +80,7 @@ export class CreatePostComponent {
   }
 
   toListPost() {
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl("/");
   }
 }
 

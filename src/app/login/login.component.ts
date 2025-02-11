@@ -1,17 +1,17 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { DialogModule } from 'primeng/dialog';
-import { InputTextModule } from 'primeng/inputtext';
-import { ButtonModule } from 'primeng/button';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
-import { AuthService } from '../services/auth.service';
-import { EMPTY, catchError, filter, map } from 'rxjs';
-import { ApiResponse } from '../data/apiResponse';
-import { User } from '../data/user';
-import { ToastService } from '../services/toast.service';
+import { Component, EventEmitter, Input, Output } from "@angular/core";
+import { DialogModule } from "primeng/dialog";
+import { InputTextModule } from "primeng/inputtext";
+import { ButtonModule } from "primeng/button";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { ReactiveFormsModule } from "@angular/forms";
+import { AuthService } from "../services/auth.service";
+import { EMPTY, catchError, map } from "rxjs";
+import { ApiResponse } from "../data/apiResponse";
+import { User } from "../data/user";
+import { ToastService } from "../services/toast.service";
 
 @Component({
-  selector: 'app-login',
+  selector: "app-login",
   standalone: true,
   imports: [
     ReactiveFormsModule,
@@ -19,8 +19,8 @@ import { ToastService } from '../services/toast.service';
     InputTextModule,
     ButtonModule,
   ],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.scss',
+  templateUrl: "./login.component.html",
+  styleUrl: "./login.component.scss",
 })
 export class LoginComponent {
   @Input()
@@ -56,7 +56,7 @@ export class LoginComponent {
           this.toastService.displayError(error.message);
           return EMPTY;
         }))
-        .subscribe((userDetail: User[]) => {
+        .subscribe(() => {
             this.displayDialog.emit(false);
             this.toastService.displayMessage('Login Successfully!');
         });

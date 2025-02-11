@@ -20,7 +20,7 @@ export interface PostApiParamater {
     body: string;
 }
 
-export type CreatePostParameter = Omit<PostParamater, 'id' | 'clone'>;
+export type CreatePostParameter = Omit<PostParamater, "id" | "clone">;
 
 export class Post {
     readonly id: number;
@@ -41,7 +41,7 @@ export class Post {
             title: data.title,
             body: data.body,
             clone: data,
-        }
+        };
         return new Post(params);
     }
 
@@ -51,7 +51,7 @@ export class Post {
             id: this.id,
             title: this.title,
             body: this.body,
-        }
+        };
     }
 
 }

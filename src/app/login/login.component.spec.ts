@@ -1,10 +1,10 @@
 import { TestBed, ComponentFixture } from "@angular/core/testing";
 
-import { LoginComponent } from './login.component';
-import { AuthService } from '../services/auth.service';
-import { ToastService } from '../services/toast.service';
-import { ApiResponse } from '../data/apiResponse';
-import { User } from '../data/user';
+import { LoginComponent } from "./login.component";
+import { AuthService } from "../services/auth.service";
+import { ToastService } from "../services/toast.service";
+import { ApiResponse } from "../data/apiResponse";
+import { User } from "../data/user";
 import { Observable, of } from "rxjs";
 
 describe('LoginComponent', () => {

@@ -1,11 +1,11 @@
-import { Injectable, computed, signal } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { ApiResponse } from '../data/apiResponse';
-import { User } from '../data/user';
-import { Observable, catchError, map, throwError, of, switchMap, tap, BehaviorSubject } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { ApiResponse } from "../data/apiResponse";
+import { User } from "../data/user";
+import { Observable,tap, BehaviorSubject } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class AuthService {
   private readonly url = 'http://localhost:3000';
