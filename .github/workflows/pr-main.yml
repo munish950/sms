@@ -1,0 +1,40 @@
+name: PR Approval and merge to main
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - repoened
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+            node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install Chrome dependencies
+        run: sudo apt-get install -y libnss3 xvfb
+            
+      - name: Run tests in headless mode
+        run: xvfb-run --auto-servernum npm test
+
+      - name: Build project
+        run: npm run build
+
+  approval:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+        - name: Wait for Manual Approval
+        uses: hmarr/auto-approve-action@v3
