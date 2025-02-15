@@ -36,5 +36,5 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-        - name: Wait for Manual Approval
+      - name: Wait for Manual Approval
         uses: hmarr/auto-approve-action@v3
